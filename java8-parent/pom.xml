@@ -15,6 +15,7 @@
         <module>date-time</module>
         <module>jdbc</module>
         <module>data-struct</module>
+        <module>httpclient</module>
     </modules>
     <packaging>pom</packaging>
 
