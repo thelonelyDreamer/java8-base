@@ -18,21 +18,23 @@ import java.io.InputStreamReader;
  * @author wangchao
  */
 public class HelloHttpClient {
-
+    public static CloseableHttpClient client = HttpClients.createDefault();
     public static void hi() throws IOException {
-        CloseableHttpClient client = HttpClients.createDefault();
-        while (true) {
-            HttpGet httpGet = new HttpGet("http://www.baidu.com");
-            CloseableHttpResponse response = client.execute(httpGet);
-            HttpEntity entity = response.getEntity();
-            InputStream content = entity.getContent();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(content));
-            String s = bufferedReader.readLine();
-            while(s!=null){
-                System.out.println(s);
-                s=bufferedReader.readLine();
-            }
+        HttpGet httpGet = new HttpGet("http://www.baidu.com");
+        CloseableHttpResponse response = client.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+        InputStream content = entity.getContent();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(content));
+        String s = bufferedReader.readLine();
+        while (s != null) {
+            System.out.println(s);
+            s = bufferedReader.readLine();
         }
+        bufferedReader.close();
+        bufferedReader=null;
+        System.out.println(bufferedReader);
+        response.close();
+        System.out.println(response);
     }
 
     public static void main(String[] args) throws IOException {
