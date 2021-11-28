@@ -16,6 +16,8 @@
         <module>jdbc</module>
         <module>data-struct</module>
         <module>httpclient</module>
+        <module>string</module>
+        <module>gui</module>
     </modules>
     <packaging>pom</packaging>
 
