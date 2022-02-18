@@ -7,4 +7,7 @@ package com.felixwc.java8.juc.key;
  * @author wangchao
  */
 public class MainApp {
+    public static void main(String[] args) {
+
+    }
 }

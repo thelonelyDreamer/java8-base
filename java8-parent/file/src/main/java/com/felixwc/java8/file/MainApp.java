@@ -1,6 +1,6 @@
 package com.felixwc.java8.file;
 
-import java.util.Scanner;
+import com.felixwc.java8.file.properties.Demo;
 
 /**
  * in order to learn java!
@@ -10,8 +10,7 @@ import java.util.Scanner;
  */
 public class MainApp {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(scanner.nextInt());
-        System.out.println(scanner.next());
+        Demo.update("test","test");
+        Demo.list();
     }
 }

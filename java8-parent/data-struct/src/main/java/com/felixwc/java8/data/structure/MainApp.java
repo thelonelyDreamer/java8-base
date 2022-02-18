@@ -1,7 +1,5 @@
 package com.felixwc.java8.data.structure;
 
-import javax.swing.*;
-
 /**
  * in order to learn java!
  * created at 2021/9/26 16:02
@@ -10,9 +8,9 @@ import javax.swing.*;
  */
 public class MainApp {
     public static void main(String[] args) {
-        JFrame jFrame = new JFrame();
-        jFrame.setSize(300,400);
-        jFrame.setVisible(true);
-        jFrame.setTitle("Hello World!");
+        int i =1;
+        for (int j = 0; j <10 ; j++) {
+            System.out.println(Integer.hashCode(j));
+        }
     }
 }

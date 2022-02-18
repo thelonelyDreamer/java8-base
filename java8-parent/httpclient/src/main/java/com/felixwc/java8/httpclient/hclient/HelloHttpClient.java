@@ -32,9 +32,7 @@ public class HelloHttpClient {
         }
         bufferedReader.close();
         bufferedReader=null;
-        System.out.println(bufferedReader);
         response.close();
-        System.out.println(response);
     }
 
     public static void main(String[] args) throws IOException {

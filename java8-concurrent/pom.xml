@@ -11,6 +11,7 @@
         <module>thread-pool</module>
         <module>problem</module>
         <module>key-word</module>
+        <module>thread-base</module>
     </modules>
     <packaging>pom</packaging>
 
