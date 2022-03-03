@@ -35,15 +35,19 @@ public class MysqlUtils {
     }
 
     //关闭数据库对象
-    public static void close(ResultSet resultSet, Statement statement, Connection connection) throws SQLException{
-        if (resultSet != null) {
-            resultSet.close();
-        }
-        if (statement != null) {
-            statement.close();
-        }
-        if (connection != null){
-            connection.close();
+    public static void close(ResultSet resultSet, Statement statement, Connection connection) {
+        try {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (statement != null) {
+                statement.close();
+            }
+            if (connection != null){
+                connection.close();
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 }

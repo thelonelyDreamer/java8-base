@@ -12,6 +12,7 @@
         <module>problem</module>
         <module>key-word</module>
         <module>thread-base</module>
+        <module>atomic-classes</module>
     </modules>
     <packaging>pom</packaging>
 

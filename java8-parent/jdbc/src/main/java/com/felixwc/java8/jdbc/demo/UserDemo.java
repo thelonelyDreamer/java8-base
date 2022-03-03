@@ -33,6 +33,12 @@ public class UserDemo {
         return users;
     }
 
+    /**
+     *  根据id 获取用户
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     public User getUserById(long id) throws SQLException {
         User user=null;
         Connection connection = MysqlUtils.getConnection();
@@ -45,5 +51,44 @@ public class UserDemo {
         return user;
     }
 
+    public boolean updateUserById(User user){
+        boolean  result = true;
+        Connection connection =null;
+        PreparedStatement preparedStatement =null;
+        try {
+            connection = MysqlUtils.getConnection();
+            String sql = "update user set name = ? where id = ?";
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,user.getName());
+            preparedStatement.setLong(2,user.getId());
+            preparedStatement.executeUpdate();
+        } catch (Exception e){
+            e.printStackTrace();
+            result =false;
+        }
+        finally {
+            MysqlUtils.close(null,preparedStatement,connection);
+        }
+        return  result;
+    }
+
+    public boolean deleteUserById(long id){
+        boolean result = true;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try{
+            connection = MysqlUtils.getConnection();
+            String sql = "delete from user where id = ?";
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setLong(1,id);
+            result = preparedStatement.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+            result = false;
+        }finally {
+            MysqlUtils.close(null,preparedStatement,connection);
+        }
+        return result;
+    }
 
 }
