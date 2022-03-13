@@ -1,9 +1,9 @@
 package com.felixwc.java8.reflection;
 
-import com.felixwc.java8.reflection.common.MyClass;
+import com.felixwc.java8.reflection.pojo.Person;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 /**
  * in order to learn java!
@@ -13,12 +13,9 @@ import java.lang.reflect.Method;
  */
 public class MainApp {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchMethodException {
-        Class<MyClass> myClassClass = MyClass.class;
-        MyClass myClass = myClassClass.newInstance();
-        Method returnString = myClassClass.getMethod("returnString");
-        Object invoke = returnString.invoke(myClass);
-        Class<?> returnType = returnString.getReturnType();
-        System.out.println(invoke);
-
+        Constructor<?>[] constructors = Person.class.getConstructors();
+        System.out.println(constructors.length);
+        Person person = Person.class.newInstance();
+        System.out.println(person);
     }
 }
