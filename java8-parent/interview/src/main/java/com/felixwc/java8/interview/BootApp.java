@@ -8,6 +8,9 @@ package com.felixwc.java8.interview;
  */
 public class BootApp {
     public static void main(String[] args) {
+        double a =21.0;
+        int b=21;
+        System.out.println(a==b);
 
     }
 }
