@@ -7,4 +7,5 @@ package com.felixw.java8.utils;
  * @author wangchao
  */
 public class MainClass {
+
 }

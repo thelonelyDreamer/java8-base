@@ -7,4 +7,5 @@ package com.felixwc.java8.exception;
  * @author wangchao
  */
 public class BootExceptionApp {
+
 }
