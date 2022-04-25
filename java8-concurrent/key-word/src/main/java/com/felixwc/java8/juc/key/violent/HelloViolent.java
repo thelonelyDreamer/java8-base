@@ -18,9 +18,9 @@ public class HelloViolent {
             @Override
             public  void run() {
                 for (int i = 0; i < 10000; i++) {
-                    lock.lock();
+//                    lock.lock();
                     num++;
-                    lock.unlock();
+//                    lock.unlock();
                 }
             }
         };
