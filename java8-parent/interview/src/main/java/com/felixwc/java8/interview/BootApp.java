@@ -1,7 +1,5 @@
 package com.felixwc.java8.interview;
 
-import com.felixwc.java8.interview.pojo.MyObject;
-
 import java.util.Stack;
 
 /**
@@ -12,7 +10,11 @@ import java.util.Stack;
  */
 public class BootApp {
     public static void main(String[] args) {
-        MyObject myObject = new MyObject();
+        int a =3;
+        int b=3;
+        String c = "3";
+        System.out.println(a+b+c);
+
     }
 
     public static String solve(String str, int k) {
