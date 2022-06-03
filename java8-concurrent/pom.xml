@@ -14,6 +14,7 @@
         <module>thread-base</module>
         <module>atomic-classes</module>
         <module>block-queue</module>
+        <module>quick-start</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,6 +1,6 @@
 package com.felixwc.java8.interview;
 
-import java.util.Stack;
+import java.util.Scanner;
 
 /**
  * in order to learn java!
@@ -9,52 +9,64 @@ import java.util.Stack;
  * @author wangchao
  */
 public class BootApp {
+
     public static void main(String[] args) {
-        int a =3;
-        int b=3;
-        String c = "3";
-        System.out.println(a+b+c);
 
     }
 
-    public static String solve(String str, int k) {
-        if (str == null || k <= 0) {
-            return str;
+    public static void solve() {
+        long start = System.currentTimeMillis();
+        int n = new Scanner(System.in).nextInt();
+        int[] arr = new int[n+1];
+        int count =0;
+        for(int i =0;i<arr.length;i++){
+            arr[i]=0;
         }
-        if (k >= str.length()||str.length()==0) {
-            return String.valueOf(0);
-        }
-        int deleted = 0;
-        Stack<Character> stack = new Stack<>();
-        int i = 0;
-        while ( i < str.length()) {
-            char c = str.charAt(i);
-            while (!stack.empty()&&c<stack.peek()&&deleted<k){
-                deleted++;
-                stack.pop();
+        int x =1;
+        while (x>0){
+//            System.out.println(x);
+            arr[x]++;
+            while (arr[x]<=n&&(!check(arr,x))){
+                arr[x]++;
             }
-            i++;
-            stack.push(c);
-        }
-        int remain = k-deleted;
-        if(remain>0){
-            for (int j = 0; j < remain ; j++) {
-                stack.pop();
+            if(arr[x]<=n){
+                if(x==n){
+                   count++;
+                   print(arr);
+                   arr[x]=0;
+                   x--;
+                }else{
+                    x++;
+                }
+            }else{
+                arr[x]=0;
+                x--;
             }
         }
-        char[] chars = new char[str.length() - k];
-        int notZero = chars.length;
-        for(int j=chars.length-1;j>=0;j--){
-            Character c = stack.pop();
-            if(c!='0') notZero =j;
-            chars[j] =c;
+        System.out.println(count);
+        long end = System.currentTimeMillis();
+        System.out.println("program 运行时间：" + (end - start));
+    }
+
+    private static void print(int[] arr){
+        for(int i =1;i<arr.length;i++){
+            for(int j=1;j<arr.length;j++){
+                if(j==arr[i]){
+                    System.out.print("x");
+                }else{
+                    System.out.print("0");
+                }
+            }
+            System.out.println();
         }
-        String res;
-        if(notZero==chars.length){
-            res = String.valueOf(0);
-        }else{
-            res = String.valueOf(chars).substring(notZero);
+        System.out.println();
+    }
+    private static boolean check(int[] arr,int j){
+        for(int i=1;i<j;i++){
+            if(Math.abs(i-j)==Math.abs(arr[i]-arr[j])||arr[i]==arr[j]){
+                return false;
+            }
         }
-        return res;
+        return true;
     }
 }

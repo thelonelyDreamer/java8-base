@@ -7,4 +7,7 @@ package com.felixwc.java8.concurrent.problem;
  * @author wangchao
  */
 public class MainApp {
+    public static void main(String[] args){
+
+    }
 }

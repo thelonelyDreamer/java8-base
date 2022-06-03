@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
 
 /**
  * in order to learn java!
@@ -20,5 +21,6 @@ public class ExecuteRunnable {
 
         poolExecutor.awaitTermination(10,TimeUnit.SECONDS);
         poolExecutor.shutdown();
+        LockSupport.park(Thread.currentThread());
     }
 }
