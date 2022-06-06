@@ -1,6 +1,8 @@
 package com.felixwc.java8.interview;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * in order to learn java!
@@ -11,7 +13,9 @@ import java.util.Scanner;
 public class BootApp {
 
     public static void main(String[] args) {
-
+        Pattern pattern = Pattern.compile("\\s+");
+        Matcher abc = pattern.matcher("abc");
+        System.out.println(abc);
     }
 
     public static void solve() {

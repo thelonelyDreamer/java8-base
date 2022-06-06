@@ -17,7 +17,6 @@
         <module>gui</module>
         <module>interview</module>
         <module>Reflection</module>
-        <module>design-pattern</module>
         <module>hello</module>
         <module>utils</module>
         <module>job</module>
