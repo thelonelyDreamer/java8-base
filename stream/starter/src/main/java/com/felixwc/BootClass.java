@@ -1,8 +1,7 @@
 package com.felixwc;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
 
 /**
  * in order to learn java!
@@ -11,28 +10,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author wangchao
  */
 public class BootClass {
-    private static AtomicInteger i=new AtomicInteger(1);
-    public static void main(String[] args) throws InterruptedException {
-        Timer timer = new Timer();
-        timer.schedule(new MyTask(),1000);
-        timer.schedule(new MyTask(),1000);
-        timer.schedule(new MyTask(),1000);
-        timer.schedule(new MyTask(),1000);
-        timer.schedule(new MyTask(),1000);
-        Thread.sleep(30000);
-        timer.cancel();
-    }
-
-    private static class MyTask extends TimerTask{
-
-        @Override
-        public void run() {
-            try {
-                Thread.sleep(1000*i.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("run myTask " + i.getAndIncrement());
-        }
+    public static void main(String[] args) {
+        IntStream intStream = IntStream.range(0,10);
+        OptionalInt first = intStream.findFirst();
+        int asInt = first.getAsInt();
+        System.out.println(asInt);
     }
 }

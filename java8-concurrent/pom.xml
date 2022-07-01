@@ -15,6 +15,7 @@
         <module>atomic-classes</module>
         <module>block-queue</module>
         <module>quick-start</module>
+        <module>concurrent-data-structure</module>
     </modules>
     <packaging>pom</packaging>
 
