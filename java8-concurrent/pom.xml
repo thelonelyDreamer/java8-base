@@ -16,6 +16,7 @@
         <module>block-queue</module>
         <module>quick-start</module>
         <module>concurrent-data-structure</module>
+        <module>concurrent-utils</module>
     </modules>
     <packaging>pom</packaging>
 
