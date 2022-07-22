@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * in order to learn java!
  * created at 2022/1/7 17:45
- *
+ * stack 被启用 继承vector 性能低
  * @author wangchao
  */
 public class StackDemo {
