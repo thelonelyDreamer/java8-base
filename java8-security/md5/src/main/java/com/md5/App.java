@@ -8,4 +8,7 @@ package com.md5;
  */
 public class App {
 
+    public static void main(String[] args) {
+        System.out.println("我写代码，我快乐！");
+    }
 }
