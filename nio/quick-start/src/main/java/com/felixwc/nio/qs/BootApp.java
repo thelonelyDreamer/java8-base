@@ -1,4 +1,4 @@
-package com.felixwc.java8.nio;
+package com.felixwc.nio.qs;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -9,11 +9,11 @@ import java.nio.charset.CharsetEncoder;
 
 /**
  * in order to learn java!
- * created at 2022/1/5 01:54
+ * created at 2022/8/10 17:17
  *
- * @author wangchao
+ * @author felixwc
  */
-public class CharSetDemo {
+public class BootApp {
     public static void main(String[] args) throws CharacterCodingException {
         //1 获取charset 对象
         Charset charset = Charset.forName("UTF-8");

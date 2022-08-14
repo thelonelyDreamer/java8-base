@@ -1,8 +1,8 @@
 package com.felixwc.java8.interview;
 
+import com.felixwc.java8.interview.p.B;
+
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * in order to learn java!
@@ -13,9 +13,10 @@ import java.util.regex.Pattern;
 public class BootApp {
 
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("\\s+");
-        Matcher abc = pattern.matcher("abc");
-        System.out.println(abc);
+        B b = new B();
+        int i = b.func1(150);
+        b.setEdge(i);
+        System.out.println("棱长为："+(12*i));
     }
 
     public static void solve() {
