@@ -1,5 +1,6 @@
 package com.felixwc.java8.juc.key.violent;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -14,22 +15,21 @@ public class HelloViolent {
 
     public static void main(String[] args) throws InterruptedException {
         ReentrantLock lock = new ReentrantLock();
-        Runnable runnable = new Runnable() {
-            @Override
-            public  void run() {
-                for (int i = 0; i < 10000; i++) {
-//                    lock.lock();
-                    num++;
-//                    lock.unlock();
-                }
+        CountDownLatch countDownLatch = new CountDownLatch(10);
+        Runnable runnable = () -> {
+            for (int i = 0; i < 10000; i++) {
+                lock.lock();
+                num++;
+                lock.unlock();
             }
+            countDownLatch.countDown();
         };
 
-        for (int i =1;i<=10;i++){
+        for (int i = 1; i <= 10; i++) {
             new Thread(runnable).start();
         }
 
-        Thread.sleep(30000);
+        countDownLatch.await();
         System.out.println(num);
     }
 

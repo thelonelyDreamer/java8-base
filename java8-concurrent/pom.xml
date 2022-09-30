@@ -17,6 +17,9 @@
         <module>quick-start</module>
         <module>concurrent-data-structure</module>
         <module>concurrent-utils</module>
+        <module>demos</module>
+        <module>pattern</module>
+        <module>complete-future</module>
     </modules>
     <packaging>pom</packaging>
 
