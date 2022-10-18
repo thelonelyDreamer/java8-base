@@ -1,14 +1,9 @@
 package com.felixwc;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Vector;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        ArrayList<String> strings = new ArrayList<>();
-        Collections.synchronizedList(strings);
-        Vector<String> strings1 = new Vector<>();
+        ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
     }
 }
