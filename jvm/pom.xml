@@ -11,6 +11,7 @@
     <modules>
         <module>object-analysis</module>
         <module>exception-analysis</module>
+        <module>ClassLoader</module>
     </modules>
 
     <dependencyManagement>
